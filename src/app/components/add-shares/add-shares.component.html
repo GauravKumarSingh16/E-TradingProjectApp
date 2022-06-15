@@ -1,0 +1,27 @@
+<h2>Add New Share</h2>
+<div>
+    <form [formGroup]="shareForm" (ngSubmit)="onFormSubmit(shareForm.value)">
+        <div class="form-group col-md-3">
+            * <label for="CompanyName"> Company Name </label>
+            <input type="text" name="CompanyName" id="CompanyName" required
+            formControlName="CompanyName" class="form-control">
+        </div>
+
+        <div class="form-group col-md-3">
+            * <label for="SharePrice"> Share Price </label>
+            <input type="number" name="SharePrice" id="SharePrice"
+            formControlName="SharePrice" class="form-control">
+        </div>
+
+        <div class="form-group col-md-3">
+            * <label for="ShareQuantity"> Share Quantity </label>
+            <input type="number" name="ShareQuantity" id="ShareQuantity"
+            formControlName="ShareQuantity" class="form-control">
+        </div>
+          ......................................................
+            <div>
+                <button type="submit" class="btn btn-primary"> Add Share </button>
+            </div>
+    </form>
+</div>
+

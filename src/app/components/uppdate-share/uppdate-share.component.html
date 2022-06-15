@@ -1,0 +1,38 @@
+<h2>Update Share</h2>
+<div>
+    <form [formGroup]="shareForm" (ngSubmit)="onFormSubmit(shareForm.value)">
+        
+        <div class="form-group col-md-3">
+            <label for="ShareId">Share Id</label>
+            <input type="number" name="ShareId" id="ShareId" readonly  
+            formControlName="ShareId"  class="form-control">
+        </div>
+
+        <div class="form-group col-md-3">
+            <label for="CompanyName">Company Name</label>
+            <input type="text" name="CompanyName" id="CompanyName" readonly
+            formControlName="CompanyName"  class="form-control">
+            
+        </div>
+
+        <div class="form-group col-md-3">
+            <label for="SharePrice">Share Price</label>
+            <input type="number" name="SharePrice" id="SharePrice" required  
+            formControlName="SharePrice"  class="form-control">
+        </div>
+
+        <div class="form-group col-md-3">
+            <label for="ShareQuantity">Name</label>
+            <input type="text" name="ShareQuantity" id="ShareQuantity" required
+            formControlName="ShareQuantity"  class="form-control">
+            
+        </div>
+
+            <div>
+                <button type="submit" class="btn btn-primary">Update Share</button>
+                <a [routerLink]="['/shares']"
+                class="btn btn-secondary">Share List</a>
+            </div>
+    </form>
+</div>
+

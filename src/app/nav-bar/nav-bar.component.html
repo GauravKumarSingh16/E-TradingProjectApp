@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" >E-Trading System</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div *ngIf="userService.isLoggedIn()" class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['shares']">Shares</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="userService.getUser().role =='Admin' " [routerLink]="['inspection']">View Users</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="userService.getUser().role =='Customer' "[routerLink]="['custom-search']">Search Shares</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="userService.getUser().role =='BusinessOwner'" [routerLink]="['shares/add']">Add Share</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['profile']">View Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="Logout()">Logout</a>
+        </li>
+      </ul>
+  
+      <div>
+        <ul class="nav navbar-nav">
+          <li *ngIf="!userService.isLoggedIn()" class="nav-item">
+            <a class="nav-link" routerLink="user/register" routerLinkActive="active">Register</a>
+          </li>
+          <li *ngIf="!userService.isLoggedIn()" class="nav-item">
+            <a class="nav-link" routerLink="user/login" routerLinkActive="active">Login</a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
